@@ -257,7 +257,7 @@ $serial_ok
 
 
 <td colspan='8'>
-Imágen de Contato: $temp_contrato_field
+Imagen de LISIM: $temp_contrato_field
 $temp_contrato_ok
 </td>
 </tr>
