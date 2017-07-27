@@ -1,0 +1,40 @@
+
+
+.tabla-ventas{width:100% !important ; height:400px;}
+
+
+@-webkit-keyframes blink {
+    0% { background: rgba(255,0,0,1); color: rgba(255, 255, 0, 1);}
+    50% { background: rgba(255,0,0,0); color: rgba(255, 255, 0,1);}
+    100% { background: rgba(255,0,0,1); color: rgba(255, 255, 255, 1);}
+}
+
+@keyframes blink {
+    0% { background: rgba(255,0,0,1); color: rgba(255, 255, 0, 1);}
+    50% { background: rgba(255,0,0,0); color: rgba(255, 255, 0,1);}
+    100% { background: rgba(255,0,0,1); color: rgba(255, 255, 255, 1);}
+}
+
+.bannedme { 
+    height: 130%; 
+    width: 130%;
+    background: rgba(255,0,0,1);
+}
+
+.bannedme {
+	color:#FFFFFF;
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-timing-function: ease;   
+
+    animation-direction: normal;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: blink;
+    animation-timing-function: ease;       
+}
+
+
+

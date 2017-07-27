@@ -1,0 +1,34 @@
+	.submit_button {
+		
+		text-align:right;
+
+		}
+
+	.resp_br {
+		
+		display:block;
+
+		}
+
+        @media only screen and (min-width: 600px){
+
+	.container-small {
+		
+		width: 450px !important;
+                margin: 0 auto !important;
+                position: relative !important;
+		font-size: 0.8em;
+
+		}
+
+
+        }
+
+        @media only screen and (min-width: 30em){
+
+	.resp_br {
+		
+		display:none;
+
+		}
+	}

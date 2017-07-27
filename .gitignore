@@ -1,0 +1,15 @@
+tiendas/
+config.php
+config.php.BU*
+core/general.log
+core/logs/general.log
+custom_logo*
+core/images/custom_logo*
+superadmin/tmp/*
+superadmin/logs/*
+!superadmin/tmp/index.php
+!superadmin/logs/index.php
+!core/modules/mis_ventas/config.php
+!core/modules/contable/config.php
+!core/modules/contratos/config.php
+

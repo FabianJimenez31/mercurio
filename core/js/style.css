@@ -1,0 +1,108 @@
+#tabla_ac_wrapper {
+background-color : transparent;
+border:0px;
+}
+
+#main_content_here > div {
+background-color : transparent;
+border:0px;
+}
+
+.whereiam {
+color:#FFFFFF;
+text-shadow: 0.1em 0.1em 0.2em white;
+vertical-align:top;
+text-align:left;
+font-family: 'Electrolize', sans-serif;
+}
+
+.menu_main {
+color:#FFF;
+text-shadow: 0.1em 0.1em 0.2em white;
+vertical-align:top;
+text-align:left;
+font-family: 'Alegreya Sans SC', sans-serif;
+font-size:80%
+}
+
+.myusername {
+color:#FFFFFF;
+/*text-shadow: 0.1em 0.1em 0.2em white;*/
+vertical-align:top;
+text-align:right;
+font-family: 'Electrolize', sans-serif;
+}
+
+td.myusername a {
+color:#FFFFFF;
+/*text-shadow: 0.1em 0.1em 0.2em white;*/
+text-decoration:none;
+}
+
+nav {
+margin:0px;
+}
+
+nav ul ul {
+	display: none;
+}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+
+nav ul {
+	background-color: #6eac2c; 
+	padding: 0 10px;
+	border-radius: 0px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;
+	
+}
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+nav ul li {
+	float: left;
+}
+	nav ul li:hover {
+		background-color: #ACE49F;
+			border-radius: 0px;  
+	}
+		nav ul li:hover a {
+			color: #000;
+		}
+	
+	nav ul li a {
+		display: block; padding: 12px 29px;
+		color: #FFF; text-decoration: none;
+	}
+
+nav ul ul {
+	background-color: #ACE49F; border-radius: 0px; padding: 0;
+	position: absolute; top: 95%;
+	color:#000;
+}
+	nav ul ul li {
+		float: none; 
+		border-top: 1px solid #448dae;
+		border-bottom: 1px solid #448dae;
+		position: relative;
+		color: #FFF;
+	}
+		nav ul ul li a {
+			padding: 7px 20px;
+			color: #FFF;
+		}	
+			nav ul ul li a:hover {
+				background-color: #79c9ec;
+				color: #000;
+			}
+
+
+nav ul ul ul {
+	position: absolute; left: 100%; top:0;
+}
+

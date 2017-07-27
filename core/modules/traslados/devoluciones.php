@@ -1,0 +1,193 @@
+<?php
+
+global $user_array;
+global $application_config;
+
+
+if(permitido($user_array['person_id'],$_GET['mod'])){
+load_template('partial','header');
+load_template('partial','menu');
+
+$traslado_arr=select_mysql("*","traslados","traslados_id=".$_GET['traslados_id']);
+$traslado=$traslado_arr['result'][0];
+
+$person_array=select_mysql("*","people","person_id=".$traslado['created_by']);
+$person=$person_array['result'][0];
+?>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+
+ 
+                  <div class="padd invoice">
+                    
+                    <div class="row">
+
+
+                      <div class="col-md-4">
+                        <h4><strong>Origen:</strong></h4>
+
+<div id="location_text">
+
+<?php
+
+if($traslado['location_id']>0){
+
+$direccion=select_mysql("*","locations","location_id=".$traslado['location_id']);
+
+echo str_replace(array("\n","\r"),"<br/>",$direccion['result'][0]['address'])."<br/>".$direccion['result'][0]['phone']."<br/>".$direccion['result'][0]['email'];
+
+}
+
+
+?>
+
+</div>
+
+                      </div>
+
+
+
+
+
+                      <div class="col-md-4">
+                        <p>
+  <label for="comment">Destino:</label><p>
+<?php
+
+echo str_replace(array("\n","\r"),"<br/>",$traslado['send_address']);
+
+?>
+</p>
+
+                        </p>
+                      </div>
+
+
+                      <div class="col-md-4">
+                        <p><strong># Traslado: </strong> <?php echo $traslado['referencial']; ?> </p>
+
+                      </div>
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dt-responsive nowrap" id="traslado" width="100%">
+<thead>
+<tr>
+<th>SKU</th>
+<th>Cantidad</th>
+<th>Números de Serie</th>
+</tr>
+</thead>
+<tbody id="articulos" class="sa">
+<?php
+
+$articulos=select_mysql("*","traslados_items","traslados_id=".$traslado['traslados_id']);
+$current_traslado=array();
+
+foreach($articulos['result'] as $ttt){
+$current_traslado['articulos'][$ttt['sku']][$ttt['serial']][$ttt['inventory_id']]['inventory_id']=$ttt['inventory_id'];
+$current_traslado['articulos'][$ttt['sku']][$ttt['serial']][$ttt['inventory_id']]['regresado']=$ttt['regresado'];
+$current_traslado['articulos'][$ttt['sku']][$ttt['serial']][$ttt['inventory_id']]['cancelacion']=$ttt['cancelacion'];
+$current_traslado['articulos'][$ttt['sku']][$ttt['serial']][$ttt['inventory_id']]['tx_id']=$ttt['tx_id'];
+}
+$responder="";
+if(count($current_traslado['articulos'])>0){
+//$current_traslado['articulos'][$_POST['referencia']][$_POST['numero']]=$_POST['inventario'];
+foreach($current_traslado['articulos'] as $sku=>$inf){
+
+$responder.= "<tr>";
+
+$responder.= "<td>".$sku."</td><td>".count($current_traslado['articulos'][$sku])."</td><td>";
+
+foreach($inf as $serial=>$id){
+
+foreach($id as $r=>$val){
+
+if($val['regresado']=="1"){
+
+$responder.="<p><strike><del>$serial</del></strike> [Devuelto] <a class=\"btn btn-warning btn-sm\" onclick=\"javascript: return cancelar_devolucion('".$val['tx_id']."');\">Cancelar Devolución</a></p>";
+
+}else{
+
+$responder.="<p>$serial <a class=\"btn btn-success btn-sm\" onclick=\"javascript: return cancelar_item('".$val['tx_id']."');\">Generar Devolución</a></p>";
+}
+
+}
+}
+
+$responder.= "</td></tr>";
+}
+}else{
+$responder="<tr><td colspan=\"4\">No hay Artículos en esta Órden de Traslado</td></tr>";
+}
+
+echo $responder;
+
+?>
+</tbody>
+</table>
+
+
+
+
+                    </div>
+
+
+
+                  </div>
+                  <div class="widget-foot">
+					<div class="pull-right">
+					<a href="?mod=traslados&proc=statuses" title="Salir" class="hidden-print btn btn-default btn-sm">Salir</a>
+					</div>
+                    <div class="clearfix"></div>
+
+              
+            </div>
+          </div>
+        </div>
+
+
+<script>
+function cancelar_item(idea){
+
+var continuar=window.confirm("Esto Cancelará éste Artículo en éste Traslado, sin embargo no estará disponible de nuevo hasta que el proceso de Traslado haya sido Completado.\n¿Desea Continuar?");
+if( continuar === true ){
+var motivo = window.prompt("Por favor escriba el Motivo de Devolución","Sin Especificar");
+var seleccionado = "?mod=traslados&proc=devuelve&tx_id=" + idea ;
+$.post( seleccionado, { razon: motivo} , function( data ) {
+reload_tabla(data);
+
+});
+
+}
+
+}
+
+function cancelar_devolucion(idea){
+
+var continuar=window.confirm("Esto Cancelará la Devolución de éste Artículo en éste Traslado.\n¿Desea Continuar?");
+if( continuar === true ){
+var seleccionado = "?mod=traslados&proc=devuelve_no&tx_id=" + idea ;
+$.post( seleccionado, function( data ) {
+reload_tabla(data);
+
+});
+
+}
+
+}
+
+function reload_tabla(contenido){
+
+$("#articulos").html(contenido);
+
+}
+</script>
+
+
+<?php
+
+load_template('partial','footer');
+}?>
