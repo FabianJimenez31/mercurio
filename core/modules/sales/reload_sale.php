@@ -250,7 +250,7 @@ $serial_added="
 <tr>
 
 <td colspan='8'>
-Contrato: $serial_field
+Numero de pedido: $serial_field
 $serial_ok
 </td>
 </tr>
