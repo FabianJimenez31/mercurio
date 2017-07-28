@@ -71,7 +71,6 @@ $i = 1;
  
 foreach ($mensajes as $mensaje) {
     if($i < 2)
-    echo $mensaje;
     $i++;
 } ?>
 
