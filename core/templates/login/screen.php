@@ -121,11 +121,10 @@ foreach ($mensajes as $mensaje) {
 <a href="?logintoken=2004998d9999skkjjshhak&offline=true" class="btn btn-success" <?php echo $show_pres; ?> >Portal Cliente</a>
                 </div>
 
-                <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
-  Tu navegador no implementa el elemento <code>video</code>.
-</video>
-                </form>
 
+                </form>
+            <iframe src="https://player.vimeo.com/video/227064694?title=0&byline=0&portrait=0" width="640" height="268" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/227064694">THE PRIVATES</a> from <a href="https://vimeo.com/amalgamatedpictureco">Amalgamated Picture Co.</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
             </div>
 
