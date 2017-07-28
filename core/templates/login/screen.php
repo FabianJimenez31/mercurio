@@ -127,8 +127,7 @@ foreach ($mensajes as $mensaje) {
 
             </div>
 
-<iframe src="https://player.vimeo.com/video/227064694?title=0&byline=0&portrait=0" width="360" height="134" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/227064694">THE PRIVATES</a> from <a href="https://vimeo.com/amalgamatedpictureco">Amalgamated Picture Co.</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
 
 </div>
     
