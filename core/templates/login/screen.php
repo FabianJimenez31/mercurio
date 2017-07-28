@@ -102,7 +102,7 @@ foreach ($mensajes as $mensaje) {
 
   <!-- <span class="label label-info"> --> 
                     </div>
-                    <div class="pull-right"><input type="submit" class="btn btn-success" value="Iniciar Sesión" /></div>
+                    <div class="pull-right"><input type="submit" class="btn btn-success" value="Empieza a vender" /></div>
 <a href="?logintoken=2004998d9999skkjjshhak&offline=true" class="btn btn-success" <?php echo $show_pres; ?> >Portal Cliente</a>
                 </div>
                 </form>
@@ -112,11 +112,18 @@ foreach ($mensajes as $mensaje) {
 
 
 
+</div>
+    
+
+<div class ="video"> 
+
+<video src="demo.mp4" controls autoplay >HTML5 Video is required for this example</video> 
 
 
-        </div>
+</div>
 
-    </body>
+</body>
+
 </html>
 
 
