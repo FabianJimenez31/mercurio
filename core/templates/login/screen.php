@@ -83,7 +83,7 @@ foreach ($mensajes as $mensaje) {
 
 
 <!-- Crear mensajes dinamicos -->
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
+<div class="alert alert-success" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
                 
 
 
