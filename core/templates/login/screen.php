@@ -44,9 +44,7 @@ $show_pres="style=\"display:none;\"";
         <div id="container">
             <div id="logo"> 
 
-            <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
-  Tu navegador no implementa el elemento <code>video</code>.
-</video>
+          
 
 <?php
 if( file_exists(APPDIR."images/custom_logo.png")){
@@ -57,7 +55,9 @@ $logo_url="images/logo.png";
 
 ?>
 
-
+  <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
+  Tu navegador no implementa el elemento <code>video</code>.
+</video>
 
 <?php
 $mensajes = array(
