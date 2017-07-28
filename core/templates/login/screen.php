@@ -53,10 +53,41 @@ $logo_url="images/logo.png";
 
 ?>
 
-                <img src="<?php echo $logo_url; ?>" alt=""/>            </div>
+
+
+<?php
+$mensajes = array(
+    'Mensaje aleatorio 1', 
+    'Mensaje aleatorio 2',
+    'Mensaje aleatorio 3',
+    'Mensaje aleatorio 4',
+    'Mensaje aleatorio 5',
+    'Mensaje aleatorio 6'
+);
+ 
+shuffle($mensajes);
+ 
+$i = 1;
+ 
+foreach ($mensajes as $mensaje) {
+    if($i < 2)
+    echo $mensaje;
+    $i++;
+} ?>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
+
+
+            <img src="<?php echo $logo_url; ?>" alt=""/>            </div>
             <div id="loginbox">            
                     <form action="?logintoken=<?php echo md5(date("Ymdhis").rand(100,999).rand(1000,9999)); ?>" method="post" accept-charset="utf-8" class="form login-form" id="loginform" autocomplete="off">                <p><b><?php echo SITE_NAME; ?></b> </br> Ingrese su Usuario y Contraseña</p>
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw"></i> Pronto tus Comisiones estarán disponibles de fórma automática y en tiempo real desde este portal (Mercurio) </div>
+
+
+///Crear mensajes dinámicos
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
+                
+
+
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                     <input type="text" name="username" value="" id="username" class="form-control" placeholder="Usuario" size="20"  />                </div>
