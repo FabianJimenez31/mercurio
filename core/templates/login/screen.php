@@ -57,12 +57,12 @@ $logo_url="images/logo.png";
 
 <?php
 $mensajes = array(
-    'Mensaje aleatorio 1', 
-    'Mensaje aleatorio 2',
-    'Mensaje aleatorio 3',
-    'Mensaje aleatorio 4',
-    'Mensaje aleatorio 5',
-    'Mensaje aleatorio 6'
+    'Recuerda registrar tus ventas a diario', 
+    'Si registras tus ventas todos los días en mercurio tienes el control de tu dinero',
+    'Mercurio es tu amigo! amalo',
+    '¿Te quejas de mercurio? se nota que no usas seguido siebel',
+    'No olvides hacer cierre de caja, eso garantiza la calidad de tu trabajo',
+    'Reporte de ventas en mercurio = dinero mucho dinero!'
 );
  
 shuffle($mensajes);
@@ -75,7 +75,7 @@ foreach ($mensajes as $mensaje) {
     $i++;
 } ?>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
+
 
 
             <img src="<?php echo $logo_url; ?>" alt=""/>            </div>
@@ -83,7 +83,7 @@ foreach ($mensajes as $mensaje) {
                     <form action="?logintoken=<?php echo md5(date("Ymdhis").rand(100,999).rand(1000,9999)); ?>" method="post" accept-charset="utf-8" class="form login-form" id="loginform" autocomplete="off">                <p><b><?php echo SITE_NAME; ?></b> </br> Ingrese su Usuario y Contraseña</p>
 
 
-///Crear mensajes dinámicos
+<!-- Crear mensajes dinamicos -->
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
                 
 
