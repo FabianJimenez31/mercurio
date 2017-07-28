@@ -58,7 +58,8 @@ $serial_a=select_mysql('*','inventory',"state='Disponible' and trans_items=".$it
 $serial_b=($serial_a['count']>0) ? $serial_a['result'][0]['serialNumber'] : 'N/A';
 
 $serial_ex=select_mysql('*','inventory',"state='Disponible' and serialNumber='".$i[$it['product_id']]['serial']."' and trans_items=".$it['item_id']);
-$serial_ok=($serial_ex['count']==1) ? "<p style='color:green;'><b>OK</b></p>":"<p style='color:red;'><b>SERIAL NO EXISTE</b></p>";
+
+$serial_ok=($serial_ex['count']==1) ? "<p style='color:green;'><b>Serial correcto</b></p>":"<p style='color:red;'><b>SERIAL NO EXISTE</b></p>";
 
 if($serial_ok=="<p style='color:red;'><b>SERIAL NO EXISTE</b></p>"){$sin_seriales++;}
 
@@ -155,7 +156,7 @@ if($is_service==1 && $is_serialized==1){
 
 $num_tel=(isset($i['num_tel']) && $i['num_tel']!='') ? $i['num_tel'] : '';
 $num_tel_field="<input type='text' value='".$num_tel."' onchange=\"javascript:change_numtel('$k',this.value);\">";
-$num_tel_ok=($num_tel!='')?"<p style='color:green;'><b>OK</b></p>":"<p style='color:red;'><b>INGRESA EL  NUMERO DE TELEFONO ASIGNADO </b></p>";
+$num_tel_ok=($num_tel!='')?"<p style='color:green;'><b>No de telefono agregado correctame</b></p>":"<p style='color:red;'><b>Ingresa el número de teléfono vendido al cliente </b></p>";
 
 if(!(isset($num_tel)) || $num_tel==''){$sin_seriales++;}
 
@@ -184,7 +185,7 @@ $temp_contrato_field=(isset($i['temp_contrato']) && $i['temp_contrato']!='')? "<
 </form>
 </div>
 ";
-$temp_contrato_ok=($temp_contrato!='')?"<p style='color:green;'><b>OK</b></p>":"<p style='color:red;'><b>INGRESA EL ARCHIVO DE LISIM</b></p>";
+$temp_contrato_ok=($temp_contrato!='')?"<p style='color:green;'><b>OK</b></p>":"<p style='color:red;'><b>Ingresa el archivo de LISIM!</b></p>";
 /* COMENTAR EL SIGUIENTE RENGLON PARA QUITAR LA OBLIGATORIEDAD DEL ARCHIVO */
 //if(!(isset($temp_contrato)) || $temp_contrato==''){$sin_seriales++;}
 
@@ -216,10 +217,10 @@ $serial_ex=select_mysql('*','inventory',"state='Disponible' and serialNumber='".
 $serial_ok=($serial_ex['count']>=1 || ($is_forced_serial<1 && $i['serial']!='')) ? "<p style='color:green;'><b>OK</b></p>":"<p style='color:red;'><b>SERIAL NO EXISTE</b></p>";
 
 if($is_service==1 && $is_serialized==1){
-if($i['serial']==''){$serial_ok="<p style='color:red;'><b>INGRESA NUMERO DE PEDIDO</b></p>";}else{$serial_ok="<p style='color:green;'><b>OK</b></p>";}
+if($i['serial']==''){$serial_ok="<p style='color:red;'><b>Ingresa el número de pedido de SIEBEL</b></p>";}else{$serial_ok="<p style='color:green;'><b>Dato agregado con exito</b></p>";}
 }
 
-if(($serial_ok=="<p style='color:red;'><b>SERIAL NO EXISTE</b></p>" || $serial_ok=="<p style='color:red;'><b>NO HAZ INGRESADO NUMERO DE LISIM</b></p>")  &&  $is_serialized>0){$sin_seriales++;}
+if(($serial_ok=="<p style='color:red;'><b>SERIAL NO EXISTE</b></p>" || $serial_ok=="<p style='color:red;'><b>Debes ingresar el número de LISIM para poder continuar</b></p>")  &&  $is_serialized>0){$sin_seriales++;}
 
 
 
