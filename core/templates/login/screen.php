@@ -120,14 +120,16 @@ foreach ($mensajes as $mensaje) {
                     <div class="pull-right"><input type="submit" class="btn btn-success" value="Empieza a vender" /></div>
 <a href="?logintoken=2004998d9999skkjjshhak&offline=true" class="btn btn-success" <?php echo $show_pres; ?> >Portal Cliente</a>
                 </div>
+
+                <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
+  Tu navegador no implementa el elemento <code>video</code>.
+</video>
                 </form>
 
 
             </div>
 
-<video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
-  Tu navegador no implementa el elemento <code>video</code>.
-</video>
+
 
 </div>
     
