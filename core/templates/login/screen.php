@@ -106,11 +106,11 @@ foreach ($mensajes as $mensaje) {
 <a href="?logintoken=2004998d9999skkjjshhak&offline=true" class="btn btn-success" <?php echo $show_pres; ?> >Portal Cliente</a>
                 </div>
                 </form>
-<video src="demo.mp4" controls autoplay >HTML5 Video is required for this example</video> 
+
 
             </div>
 
-
+<video src="demo.mp4" controls autoplay >HTML5 Video is required for this example</video> 
 
 
 </div>
