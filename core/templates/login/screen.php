@@ -42,7 +42,11 @@ $show_pres="style=\"display:none;\"";
         
 
         <div id="container">
-            <div id="logo">
+            <div id="logo"> 
+
+            <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
+  Tu navegador no implementa el elemento <code>video</code>.
+</video>
 
 <?php
 if( file_exists(APPDIR."images/custom_logo.png")){
@@ -110,13 +114,12 @@ foreach ($mensajes as $mensaje) {
 
             </div>
 
-<video src="demo.mp4" controls autoplay >HTML5 Video is required for this example</video> 
 
 
 </div>
     
 
-<div class ="video"> 
+
 
 
 
