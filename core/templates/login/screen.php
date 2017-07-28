@@ -42,9 +42,9 @@ $show_pres="style=\"display:none;\"";
         
 
         <div id="container">
-            <div id="logo"> 
+        <div id="logo"> 
 
-          
+
 
 <?php
 if( file_exists(APPDIR."images/custom_logo.png")){
@@ -55,9 +55,24 @@ $logo_url="images/logo.png";
 
 ?>
 
-  <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
-  Tu navegador no implementa el elemento <code>video</code>.
-</video>
+ 
+
+
+
+
+
+            <img src="<?php echo $logo_url; ?>" alt=""/>            </div>
+            <div id="loginbox">            
+
+<form action="?logintoken=<?php echo md5(date("Ymdhis").rand(100,999).rand(1000,9999)); ?>" method="post" accept-charset="utf-8" class="form login-form" id="loginform" autocomplete="off">                
+<p>
+
+<b><?php echo SITE_NAME; ?></b> 
+
+</br> Ingrese su Usuario y Contraseña
+
+</p>
+
 
 <?php
 $mensajes = array(
@@ -78,14 +93,6 @@ foreach ($mensajes as $mensaje) {
     $i++;
 } ?>
 
-
-
-
-            <img src="<?php echo $logo_url; ?>" alt=""/>            </div>
-            <div id="loginbox">            
-                    <form action="?logintoken=<?php echo md5(date("Ymdhis").rand(100,999).rand(1000,9999)); ?>" method="post" accept-charset="utf-8" class="form login-form" id="loginform" autocomplete="off">                <p><b><?php echo SITE_NAME; ?></b> </br> Ingrese su Usuario y Contraseña</p>
-
-
 <!-- Crear mensajes dinamicos -->
 <div class="alert alert-success" role="alert"><i class="fa fa-info-circle fa-fw"></i> <?php echo $mensaje; ?> </div>
                 
@@ -93,12 +100,16 @@ foreach ($mensajes as $mensaje) {
 
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" name="username" value="" id="username" class="form-control" placeholder="Usuario" size="20"  />                </div>
+                    <input type="text" name="username" value="" id="username" class="form-control" placeholder="Usuario" size="20"  />                
+                </div>
+
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" name="password" value="" id="password" class="form-control" placeholder="Clave" size="20"  />
                 </div>
+                
                 <hr />
+                
                 <div class="form-actions">
                     <div class="pull-left">
                        <br />
@@ -114,7 +125,9 @@ foreach ($mensajes as $mensaje) {
 
             </div>
 
-
+<video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
+  Tu navegador no implementa el elemento <code>video</code>.
+</video>
 
 </div>
     
